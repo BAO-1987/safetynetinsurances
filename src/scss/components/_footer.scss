@@ -1,0 +1,46 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.footer {
+  padding: rem(88) 0 24px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.2;
+
+    p {
+      opacity: 1;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 24px;
+
+    a {
+      transition: text-shadow 0.3s linear;
+
+      &:hover {
+        text-shadow: 0.3px 0.3px 0 currentcolor;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    padding: 24px 0;
+  }
+
+  @include media(mobile-l) {
+    &__inner {
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

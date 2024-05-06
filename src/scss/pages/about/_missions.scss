@@ -1,0 +1,97 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.missions {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+
+  &__item {
+    counter-increment: missions-counter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 24px;
+    height: 100%;
+    min-height: 417px;
+    background-color: var(--color-blue-50);
+
+    &::after {
+      content: counter(missions-counter, decimal-leading-zero);
+      position: absolute;
+      right: 0;
+      bottom: -68px;
+      z-index: -1;
+      font-weight: var(--fw-400);
+      font-size: clamp(4.375rem, 2.4167rem + 8.7037vi, 10.25rem);
+      line-height: 1.2;
+    }
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+
+  @include media(tablet-wide) {
+    &__item {
+      min-height: 260px;
+
+      &::after {
+        bottom: -50px;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &__item {
+      padding: 16px;
+
+      &::before {
+        right: 10px;
+        top: 10px;
+        width: 32px;
+        height: 32px;
+      }
+
+      &::after {
+        opacity: 0.2;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      min-height: 160px;
+
+      &:last-child {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      &::after {
+        bottom: -30px;
+      }
+
+      &:last-child {
+        grid-column: auto;
+      }
+    }
+  }
+}

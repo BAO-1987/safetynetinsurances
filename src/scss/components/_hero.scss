@@ -1,0 +1,66 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.hero {
+  $root: &;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 584px;
+  }
+
+  p {
+    margin-bottom: 48px;
+    width: 100%;
+    max-width: 493px;
+  }
+
+  &--home {
+    #{$root}__content {
+      max-width: 495px;
+
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+ 
+
+  @include media(mobile-l) {
+    &__inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &__content {
+      max-width: 100%;
+
+      p {
+        margin-bottom: 0;
+        max-width: 100%;
+      }
+    }
+
+    &--home {
+      #{$root}__content {
+        max-width: 100%;
+      }
+
+      p {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    .btn {
+      max-width: 100%;
+    }
+  }
+}

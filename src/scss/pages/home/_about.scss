@@ -1,0 +1,24 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.about {
+  &__inner {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 493px;
+  }
+
+  @include media(mobile-l) {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+  }
+}

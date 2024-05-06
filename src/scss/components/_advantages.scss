@@ -1,0 +1,76 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.advantages {
+  margin-bottom: rem(88);
+
+  &__inner {
+    position: relative;
+  }
+
+  &__list {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 803px;
+    gap: 16px;
+    inset: auto 24px 24px auto;
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 24px;
+    background-color: var(--color-white);
+  }
+
+  @include media(tablet) {
+    margin-bottom: 30px;
+
+    &__list {
+      position: relative;
+      max-width: 100%;
+      inset: 0;
+    }
+
+    &__item {
+      padding: 16px;
+    }
+
+    &__image {
+      margin-bottom: 24px;
+
+      img {
+        aspect-ratio: 16/9;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      overflow: visible;
+      padding: 0;
+
+      &:last-child {
+        grid-column: 2 span;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: auto;
+      }
+    }
+  }
+}
