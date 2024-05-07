@@ -3,17 +3,19 @@
 @use "../utils/mixins" as *;
 
 *[class].btn {
+  margin: 0;
+  font-family: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid transparent;
   border-radius: var(--radius-main);
-  padding: 8px 24px;
+  padding: 6px 22px;
   width: 100%;
   height: max-content;
   max-width: fit-content;
-  font-weight: var(--fw-500);
-  font-size: 18px;
+  font-weight: var(--fw-700);
+  font-size: 16px;
   line-height: 1.4;
   color: var(--color-gray-10);
   background-color: var(--color-blue-600);
@@ -22,34 +24,51 @@
 
   &:hover,
   &:focus {
-    border-color: var(--color-black);
-    color: var(--color-black);
+    border-color: var(--color-blue-600);
+    color: var(--color-blue-600);
     background-color: var(--color-white);
   }
 
   &--reverse {
     border-color: var(--color-blue-600);
     color: var(--color-blue-600);
-    background-color: var(--color-gray-10);
+    background-color: transparent;
 
     &:hover,
     &:focus {
       color: var(--color-white);
-      background-color: var(--color-black);
+      background-color: var(--color-blue-600);
     }
   }
 
   &--request {
-    margin: 0;
-    font-family: inherit;
-    color: var(--color-white) !important;
-    background-color: var(--color-black) !important;
+    color: var(--color-gray-10) !important;
+    background-color: var(--color-blue-600) !important;
 
     &:hover,
     &:focus {
-      border-color: var(--color-black) !important;
+      border-color: var(--color-blue-600) !important;
       color: var(--color-black) !important;
       background-color: var(--color-white) !important;
+    }
+  }
+
+  &--slider {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+    padding: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background-image: url("../images/icons/arrow.svg");
+      background-position: 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 }

@@ -13,10 +13,10 @@ body {
   font-weight: var(--fw-400);
   font-style: normal;
   font-size: clamp(16px, 1vw, 20px);
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: 0;
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--color-blue-600);
+  background-color: var(--color-gray-10);
   font-optical-sizing: auto;
   scroll-padding: var(--header-height);
 
@@ -47,7 +47,7 @@ body {
 }
 
 .section {
-  padding: rem(88) 0;
+  padding: rem(86) 0;
 
   @include media(tablet) {
     padding: 30px 0;
@@ -77,7 +77,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 209px;
+  max-width: 104px;
 }
 
 .image {

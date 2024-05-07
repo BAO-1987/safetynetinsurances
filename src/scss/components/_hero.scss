@@ -12,7 +12,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     min-height: 900px;
 
     // &::before {
@@ -29,24 +29,17 @@
   &__content {
     position: relative;
     z-index: 1;
-    margin-bottom: 140px;
     width: 100%;
-    max-width: 644px;
+    max-width: 540px;
   }
 
   h1 {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
-  p {
-    margin-bottom: 32px;
-    font-weight: var(--fw-600);
-    font-size: clamp(1.25rem, 1.0417rem + 0.9259vi, 1.875rem);
-  }
-
-  .btn {
-    padding: 13px 81px;
-  }
+p {
+  margin-bottom: rem(48);
+}
 
   &--company,
   &--destination {

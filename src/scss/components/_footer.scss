@@ -2,45 +2,29 @@
 @use "../utils/mixins/" as *;
 
 .footer {
-  padding: rem(88) 0 24px;
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    line-height: 1.2;
-
-    p {
-      opacity: 1;
-    }
-  }
-
   &__list {
     display: flex;
-    gap: 24px;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-right: 36px;
+    }
 
     a {
-      transition: text-shadow 0.3s linear;
-
-      &:hover {
-        text-shadow: 0.3px 0.3px 0 currentcolor;
-      }
+      font-size: 20px;
     }
   }
 
-  @include media(tablet) {
-    padding: 24px 0;
-  }
+  &__copy {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-weight: var(--fw-300);
+    font-size: 16px;
 
-  @include media(mobile-l) {
-    &__inner {
-      flex-direction: column;
-      justify-content: center;
-      gap: 24px;
-
-      p {
-        text-align: center;
-      }
+    p {
+      font-size: 16px;
     }
   }
 }

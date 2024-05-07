@@ -1,0 +1,45 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.reviews {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 487px;
+
+    p {
+      margin-bottom: 106px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 638px;
+    gap: 36px;
+  }
+
+  &__autor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 12px;
+
+    img {
+      overflow: hidden;
+      border-radius: 50%;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+  }
+}
