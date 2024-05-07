@@ -1,158 +1,158 @@
-@use "../utils/functions/" as *;
-@use "../utils/mixins/" as *;
+// @use "../utils/functions/" as *;
+// @use "../utils/mixins/" as *;
 
-.service {
-  $root: &;
+// .service {
+//   $root: &;
 
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
+//   &__list {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 24px;
+//   }
 
-  &__item {
-    counter-increment: service-counter;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: var(--radius-big);
-    padding: 24px;
-    height: 100%;
-    min-height: 417px;
-    background-color: var(--color-blue-50);
-    z-index: 2;
+//   &__item {
+//     counter-increment: service-counter;
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     overflow: hidden;
+//     border-radius: var(--radius-big);
+//     padding: 24px;
+//     height: 100%;
+//     min-height: 417px;
+//     background-color: var(--color-blue-50);
+//     z-index: 2;
 
-    &::before {
-      content: "";
-      position: absolute;
-      right: 24px;
-      top: 24px;
-      width: 48px;
-      height: 48px;
-      background-image: url("../images/icons/arrow.svg");
-      background-position: 0 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       right: 24px;
+//       top: 24px;
+//       width: 48px;
+//       height: 48px;
+//       background-image: url("../images/icons/arrow.svg");
+//       background-position: 0 0;
+//       background-size: cover;
+//       background-repeat: no-repeat;
+//     }
 
-    &::after {
-      content: counter(service-counter, decimal-leading-zero);
-      position: absolute;
-      right: 0;
-      bottom: -68px;
-      font-weight: var(--fw-400);
-      font-size: clamp(130px, 2.4167rem + 8.7037vi, 164px);
-      line-height: 1.2;
-      z-index: -1;
-    }
-  }
+//     &::after {
+//       content: counter(service-counter, decimal-leading-zero);
+//       position: absolute;
+//       right: 0;
+//       bottom: -68px;
+//       font-weight: var(--fw-400);
+//       font-size: clamp(130px, 2.4167rem + 8.7037vi, 164px);
+//       line-height: 1.2;
+//       z-index: -1;
+//     }
+//   }
 
-  h2 {
-    margin-bottom: 33px;
-  }
+//   h2 {
+//     margin-bottom: 33px;
+//   }
 
-  h3 {
-    margin-bottom: 24px;
-    width: 100%;
-    max-width: 185px;
-  }
+//   h3 {
+//     margin-bottom: 24px;
+//     width: 100%;
+//     max-width: 185px;
+//   }
 
-  &--main,
-  &--option {
-    #{$root}__item {
-      &::before {
-        content: none;
-      }
-    }
+//   &--main,
+//   &--option {
+//     #{$root}__item {
+//       &::before {
+//         content: none;
+//       }
+//     }
 
-    h2 {
-      margin-bottom: 31px;
-    }
+//     h2 {
+//       margin-bottom: 31px;
+//     }
 
-    h3 {
-      margin-bottom: 8px;
-      max-width: 100%;
-    }
-  }
+//     h3 {
+//       margin-bottom: 8px;
+//       max-width: 100%;
+//     }
+//   }
 
-  &--option {
-    #{$root}__list {
-      grid-template-columns: repeat(3, 1fr);
-    }
+//   &--option {
+//     #{$root}__list {
+//       grid-template-columns: repeat(3, 1fr);
+//     }
 
-    #{$root}__item {
-      min-height: 457px;
-    }
-  }
+//     #{$root}__item {
+//       min-height: 457px;
+//     }
+//   }
 
-  @include media(tablet-wide) {
-    &__list {
-      grid-template-columns: repeat(2, 1fr);
-    }
+//   @include media(tablet-wide) {
+//     &__list {
+//       grid-template-columns: repeat(2, 1fr);
+//     }
 
-    &__item {
-      min-height: 260px;
-      &::after {
-        bottom: -50px;
-      }
-    }
-  }
+//     &__item {
+//       min-height: 260px;
+//       &::after {
+//         bottom: -50px;
+//       }
+//     }
+//   }
 
-  @include media(tablet) {
-    &__item {
-      padding: 16px;
+//   @include media(tablet) {
+//     &__item {
+//       padding: 16px;
 
-      &::after {
-        opacity: 0.2;
-      }
+//       &::after {
+//         opacity: 0.2;
+//       }
 
-      &::before {
-        top: 10px;
-        right: 10px;
-        width: 32px;
-        height: 32px;
-      }
-    }
+//       &::before {
+//         top: 10px;
+//         right: 10px;
+//         width: 32px;
+//         height: 32px;
+//       }
+//     }
 
-    &--option {
-      #{$root}__list {
-        grid-template-columns: repeat(2, 1fr);
-      }
+//     &--option {
+//       #{$root}__list {
+//         grid-template-columns: repeat(2, 1fr);
+//       }
 
-      #{$root}__item {
-        min-height: 200px;
-        &:last-child {
-          grid-column: 2 span;
-        }
-      }
-    }
-  }
+//       #{$root}__item {
+//         min-height: 200px;
+//         &:last-child {
+//           grid-column: 2 span;
+//         }
+//       }
+//     }
+//   }
 
-  @include media(mobile-m) {
-    &__list {
-      grid-template-columns: 1fr;
-    }
+//   @include media(mobile-m) {
+//     &__list {
+//       grid-template-columns: 1fr;
+//     }
 
-    &__item {
-      min-height: 200px;
-    }
+//     &__item {
+//       min-height: 200px;
+//     }
 
-    h3 {
-      margin-bottom: 16px;
-      max-width: 100%;
-    }
+//     h3 {
+//       margin-bottom: 16px;
+//       max-width: 100%;
+//     }
 
-    &--option {
-      #{$root}__list {
-        grid-template-columns: 1fr;
-      }
+//     &--option {
+//       #{$root}__list {
+//         grid-template-columns: 1fr;
+//       }
 
-      #{$root}__item {
-        &:last-child {
-          grid-column: auto;
-        }
-      }
-    }
-  }
-}
+//       #{$root}__item {
+//         &:last-child {
+//           grid-column: auto;
+//         }
+//       }
+//     }
+//   }
+// }

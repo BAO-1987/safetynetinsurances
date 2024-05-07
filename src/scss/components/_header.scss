@@ -5,9 +5,12 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  padding: 23px 0;
+  padding: 16px 0;
   width: 100%;
-  background-color: var(--color-white);
+  // background-color: var(--color-white);
+  // backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0) 99.999%);
   transition-property: transform;
   transition-duration: 0.15s;
 
@@ -22,5 +25,4 @@
   @include media(tablet) {
     padding: 16px 0;
   }
-
 }

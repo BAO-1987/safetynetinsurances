@@ -4,61 +4,94 @@
 .hero {
   $root: &;
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   &__inner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 900px;
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   z-index: 1;
+    //   background: linear-gradient(90deg, rgb(22, 17, 12), rgba(22, 17, 12, 0) 38.4%),
+    //     linear-gradient(180deg, rgba(22, 17, 12, 0) 64.83%, rgb(22, 17, 12) 100%),
+    //     linear-gradient(180deg, rgb(22, 17, 12) 9.168%, rgba(22, 17, 12, 0) 22.144%);
+    //   inset: 0;
+    // }
   }
 
   &__content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 140px;
     width: 100%;
-    max-width: 584px;
+    max-width: 644px;
+  }
+
+  h1 {
+    margin-bottom: 16px;
   }
 
   p {
-    margin-bottom: 48px;
-    width: 100%;
-    max-width: 493px;
+    margin-bottom: 32px;
+    font-weight: var(--fw-600);
+    font-size: clamp(1.25rem, 1.0417rem + 0.9259vi, 1.875rem);
   }
 
-  &--home {
-    #{$root}__content {
-      max-width: 495px;
+  .btn {
+    padding: 13px 81px;
+  }
 
-      p {
-        max-width: 100%;
-      }
+  &--company,
+  &--destination {
+    #{$root}__content {
+      max-width: 750px;
+    }
+    h1 {
+      font-size: clamp(1.875rem, 1.5rem + 1.6667vi, 3rem);
     }
   }
- 
 
-  @include media(mobile-l) {
+  &--destination {
+    h1 {
+      font-size: clamp(1.875rem, 1.6667rem + 2.037vi, 3.5rem);
+    }
+  }
+
+  &--tour {
+    #{$root}__content {
+      max-width: 720px;
+    }
+  }
+
+  &--gallery {
+    #{$root}__content {
+      max-width: 850px;
+    }
+  }
+
+  @include media(tablet) {
     &__inner {
-      grid-template-columns: 1fr;
-      gap: 24px;
+      min-height: 450px;
     }
 
     &__content {
       max-width: 100%;
-
-      p {
-        margin-bottom: 0;
-        max-width: 100%;
-      }
-    }
-
-    &--home {
-      #{$root}__content {
-        max-width: 100%;
-      }
-
-      p {
-        margin-bottom: 24px;
-      }
+      margin-bottom: 0;
     }
   }
 
   @include media(mobile-m) {
+    &__inner {
+      min-height: 400px;
+    }
+
     .btn {
       max-width: 100%;
     }
