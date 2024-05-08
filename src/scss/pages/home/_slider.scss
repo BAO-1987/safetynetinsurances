@@ -2,33 +2,42 @@
 @use "../../utils/mixins/" as *;
 
 .slider {
+  padding: 86px 0 107px;
   &__swiper {
     overflow: hidden;
   }
 
   &__content {
-    position: relative;
     width: 100%;
     max-width: 638px;
   }
 
   &__item {
-    position: relative;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 36px;
     height: auto;
   }
 
+  &__image {
+    position: relative;
+
+    img {
+      overflow: hidden;
+      border-radius: var(--radius-big);
+    }
+  }
+
   &__list {
-    padding-bottom: 16px;
+    padding-bottom: 20px;
   }
 
   &__nav {
     --swiper-pagination-color: var(--color-blue-600);
 
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translate(85%, -8%);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -58,14 +67,22 @@
       bottom: 0;
       z-index: 1;
     }
-  }
 
-  img {
-    overflow: hidden;
-    border-radius: var(--radius-big);
+    .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px);
+  }
+}
+
+  &__desc {
+    translate: 0 -34px;
   }
 
   .slogan {
-    margin-bottom: 0;
+    margin-bottom: 282px;
+  }
+
+  h2 {
+    margin-bottom: 6px;
+    line-height: 1.4;
   }
 }

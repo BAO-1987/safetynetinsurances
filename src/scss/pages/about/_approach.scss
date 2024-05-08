@@ -1,0 +1,26 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.approach {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  &__text {
+    &:first-of-type {
+      margin-bottom: 49px;
+    }
+  }
+
+  .slogan {
+    margin-bottom: 83px;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+}

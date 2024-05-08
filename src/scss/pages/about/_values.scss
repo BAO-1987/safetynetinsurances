@@ -1,0 +1,40 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.values {
+  &__inner {
+    display: flex;
+    gap: 36px;
+  }
+
+  &__decr {
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 36px;
+    width: 100%;
+    max-width: 366px;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.02);
+    color: var(--color-gray-10);
+    background-color: var(--color-blue-600);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 36px;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.02);
+    background-color: var(--color-white);
+  }
+
+  h3 {
+    margin-bottom: 36px;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}

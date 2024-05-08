@@ -1,0 +1,37 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.partners {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    place-items: center;
+    align-self: baseline;
+    text-align: center;
+
+    &:hover {
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+
+  img {
+    margin-bottom: 36px;
+    transition: filter 0.3s linear;
+  }
+
+  a {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

@@ -3,7 +3,8 @@
 
 .hero {
   $root: &;
-
+  overflow: hidden;
+  border-radius: 0 0 24px 24px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -37,17 +38,9 @@
     margin-bottom: 24px;
   }
 
-p {
-  margin-bottom: rem(48);
-}
-
-  &--company,
-  &--destination {
-    #{$root}__content {
-      max-width: 750px;
-    }
-    h1 {
-      font-size: clamp(1.875rem, 1.5rem + 1.6667vi, 3rem);
+  &--home {
+    p {
+      margin-bottom: rem(48);
     }
   }
 

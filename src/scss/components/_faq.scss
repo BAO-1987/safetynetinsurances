@@ -2,19 +2,30 @@
 @use "../utils/mixins/" as *;
 
 .faq {
+  padding: 86px 0 55px;
+
   &__item {
     position: relative;
+    margin-bottom: 56px;
 
-    &:not(:last-child) {
-      margin-bottom: 40px;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-azure-300);
+    }
+  }
 
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: -20px;
-        width: 100%;
-        height: 1px;
-        background-color: rgba(150, 150, 150, 1);
+  details {
+    &[open] {
+      summary {
+        padding-bottom: 0;
+
+        &::after {
+          transform: scaleY(1);
+        }
       }
     }
   }
@@ -22,30 +33,32 @@
   summary {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 24px 0;
-    font-weight: var(--fw-600);
-    font-size: clamp(1.125rem, 1rem + 0.5556vi, 1.5rem);
-    line-height: 1.21;
+    padding: 0 25px 0 0;
+    font-weight: var(--fw-700);
+    font-size: 24px;
+    line-height: 1.5;
     transition: color 0.3s linear;
     cursor: pointer;
 
+    &::after {
+      @include mask;
+
+      right: 0;
+      top: 1px;
+      mask-image: url("../images/icons/chevron.svg");
+      width: 32px;
+      height: 32px;
+      transform: scaleY(-1);
+      transition: transform 0.3s linear;
+    }
+
     + div {
-      padding: 8px 0 0;
-      font-weight: var(--fw-500);
+      padding: 12px 25px 0 0;
     }
 
     &:hover {
-      color: var(--color-blue-600);
+      color: var(--color-azure-300);
     }
-  }
-
-  h2 {
-    margin-bottom: rem(88);
-  }
-
-  p {
-    opacity: 1;
   }
 
   @include media(tablet) {

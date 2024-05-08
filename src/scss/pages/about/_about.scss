@@ -1,0 +1,22 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.about {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 36px;
+    font-weight: var(--fw-400);
+  }
+
+  &--products {
+    max-width: 990px;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
