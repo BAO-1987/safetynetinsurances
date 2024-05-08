@@ -37,7 +37,7 @@
 
     li {
       position: relative;
-      padding-left: 40px;
+      padding-left: 38px;
 
       &::before {
         content: "";
@@ -52,6 +52,17 @@
         background-size: cover;
         background-repeat: no-repeat;
       }
+    }
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    font-weight: var(--fw-400);
+  }
+
+  @include media(tablet) {
+    &__list {
+      grid-template-columns: 1fr;
     }
   }
 }

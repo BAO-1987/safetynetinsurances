@@ -36,34 +36,17 @@
     &__list {
       grid-template-columns: repeat(2, 1fr);
     }
-
-    &__item {
-      padding: 16px;
-
-      &:last-child {
-        grid-column: span 2;
-
-        img {
-          aspect-ratio: 2/1;
-        }
-      }
-    }
   }
 
   @include media(mobile-m) {
     &__list {
       grid-template-columns: 1fr;
+      gap: 24px;
     }
 
-    &__item {
-      img {
-        object-position: center;
-        aspect-ratio: 2/1;
-      }
-
-      &:last-child {
-        grid-column: auto;
-      }
+    img {
+      width: 100px;
+      height: 100px;
     }
   }
 }

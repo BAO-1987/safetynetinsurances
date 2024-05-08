@@ -2,7 +2,8 @@
 @use "../../utils/mixins/" as *;
 
 .slider {
-  padding: 86px 0 107px;
+  padding: rem(86) 0 rem(107);
+
   &__swiper {
     overflow: hidden;
   }
@@ -21,11 +22,6 @@
 
   &__image {
     position: relative;
-
-    img {
-      overflow: hidden;
-      border-radius: var(--radius-big);
-    }
   }
 
   &__list {
@@ -69,9 +65,9 @@
     }
 
     .swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px);
+      margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px);
+    }
   }
-}
 
   &__desc {
     translate: 0 -34px;
@@ -84,5 +80,37 @@
   h2 {
     margin-bottom: 6px;
     line-height: 1.4;
+  }
+
+  @include media(tablet-wide) {
+    &__item {
+      align-items: center;
+    }
+
+    .slogan {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include media(tablet-wide) {
+    padding: 45px 0;
+  }
+
+  @include media(tablet) {
+    &__nav {
+      transform: translate(-50%, -8%);
+    }
+  }
+
+  @include media(mobile-l) {
+    &__item {
+      flex-direction: column;
+      height: 100%;
+      gap: 24px;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
   }
 }

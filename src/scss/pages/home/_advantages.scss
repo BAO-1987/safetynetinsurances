@@ -4,7 +4,6 @@
 .advantages {
   &__list {
     display: grid;
-    grid-auto-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
@@ -46,8 +45,48 @@
   }
 
   h3 {
-    margin-bottom: 24px;
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 17px;
+    min-height: 42px;
+    font-size: clamp(1.125rem, 1rem + 0.5556vi, 1.5rem);
     line-height: 1.5;
+  }
+
+  @include media(tablet) {
+    &__item {
+      padding: 16px;
+
+      &::before {
+        margin-bottom: 16px;
+        width: 110px;
+        height: 110px;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: 2 span;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      &:last-child {
+        grid-column: auto;
+      }
+    }
   }
 }

@@ -38,4 +38,8 @@ p {
   line-height: 1.375;
   color: var(--color-white);
   background-color: var(--color-azure-300);
+
+  @include media(tablet) {
+    margin-bottom: 30px;
+  }
 }

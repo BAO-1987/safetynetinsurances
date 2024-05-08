@@ -14,6 +14,12 @@
     }
   }
 
+  &__image {
+    img {
+      height: 100%;
+    }
+  }
+
   .slogan {
     margin-bottom: 83px;
   }
@@ -23,4 +29,27 @@
     line-height: 1.2;
   }
 
+  @include media(tablet-wide) {
+    &__text {
+      &:first-of-type {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__image {
+      img {
+        aspect-ratio: 16/9;
+      }
+    }
+
+    .slogan {
+      margin-bottom: 30px;
+    }
+  }
 }

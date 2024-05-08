@@ -35,7 +35,7 @@
     align-items: center;
     padding: 0 25px 0 0;
     font-weight: var(--fw-700);
-    font-size: 24px;
+    font-size: clamp(1.125rem, 1rem + 0.5556vi, 1.5rem);
     line-height: 1.5;
     transition: color 0.3s linear;
     cursor: pointer;

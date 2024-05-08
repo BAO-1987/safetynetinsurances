@@ -52,4 +52,24 @@
     font-weight: var(--fw-300);
     font-size: 16px;
   }
+
+  @include media(tablet) {
+    &__item {
+      padding: 16px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      padding: 0;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
 }

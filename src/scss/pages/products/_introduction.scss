@@ -37,11 +37,13 @@
   }
 
   &__image {
-    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.02);
+    img {
+      height: 100%;
+    }
   }
 
   h2 {
-    margin-bottom: 59px;
+    margin-bottom: 63px;
     line-height: 1.2;
   }
 
@@ -54,5 +56,43 @@
   .btn {
     margin-top: auto;
     max-width: 100%;
+  }
+
+  @include media(tablet-wide) {
+    &__item {
+      &:not(:first-child, :last-child) {
+        padding: 40px 0;
+      }
+
+      &:first-child {
+        padding-bottom: 40px;
+      }
+
+      &:last-child {
+        padding-top: 40px;
+      }
+    }
+
+    &__desc {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include media(tablet) {
+    &__item {
+      grid-template-columns: 1fr;
+
+      img {
+        aspect-ratio: 2/1;
+      }
+    }
+
+    &__desc {
+      gap: 24px;
+    }
   }
 }

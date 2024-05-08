@@ -4,15 +4,20 @@
 .footer {
   &__list {
     display: flex;
-  }
 
-  li {
-    &:not(:last-child) {
-      margin-right: 37px;
-    }
+    li {
+      &:not(:last-child) {
+        margin-right: 37px;
+      }
 
-    a {
-      font-size: 20px;
+      a {
+        font-size: 20px;
+        transition: text-shadow 0.3s linear;
+
+        &:hover {
+          text-shadow: 0.3px 0.3px 0 currentcolor;
+        }
+      }
     }
   }
 
@@ -25,6 +30,36 @@
 
     p {
       font-size: 16px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      li {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      flex-direction: column;
+      gap: 24px;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__copy {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 24px;
     }
   }
 }
