@@ -2,7 +2,7 @@
 @use "../../utils/mixins/" as *;
 
 .resources {
-  padding: 86px 0 87px;
+  padding: rem(86) 0 rem(87);
 
   &__list {
     display: grid;
@@ -11,23 +11,24 @@
   }
 
   &__item {
-    width: 100%;
-    max-width: 638px;
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-big);
     padding: clamp(15px, 2.5vw, 36px);
+    width: 100%;
+    max-width: 638px;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.02);
     background-color: var(--color-white);
 
     &::before {
       @include mask;
 
-      top: 55px;
       right: 32px;
+      top: 55px;
+      mask-image: url("../images/icons/arrow-big.svg");
       width: 57px;
       height: 16px;
-      mask-image: url("../images/icons/arrow-big.svg");
+      transition: transform 0.3s linear;
     }
 
     &--colored {
@@ -57,6 +58,8 @@
     h2 {
       margin-bottom: 24px;
       font-weight: var(--fw-400);
+      font-size: clamp(1.5625rem, 1.3333rem + 1.0185vi, 36px);
+      line-height: 1.5;
     }
 
     a {
@@ -64,6 +67,12 @@
         content: "";
         position: absolute;
         inset: 0;
+      }
+    }
+
+    &:hover {
+      &::before {
+        transform: translateX(5px);
       }
     }
   }
@@ -80,7 +89,8 @@
 
       &::before {
         top: 10px;
-        right: 10px;
+        width: 45px;
+        height: 12px;
       }
     }
   }
@@ -99,4 +109,3 @@
     }
   }
 }
-

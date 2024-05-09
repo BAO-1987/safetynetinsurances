@@ -50,8 +50,6 @@
     justify-content: center;
     margin-bottom: 17px;
     min-height: 42px;
-    font-size: clamp(1.125rem, 1rem + 0.5556vi, 1.5rem);
-    line-height: 1.5;
   }
 
   @include media(tablet) {

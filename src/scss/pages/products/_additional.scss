@@ -44,13 +44,13 @@
         position: absolute;
         left: 0;
         top: 50%;
-        transform: translateY(-50%);
         width: 24px;
         height: 24px;
         background-image: url("../images/icons/circle.svg");
         background-position: 0 0;
         background-size: cover;
         background-repeat: no-repeat;
+        transform: translateY(-50%);
       }
     }
   }
@@ -58,11 +58,20 @@
   h2 {
     margin-bottom: 24px;
     font-weight: var(--fw-400);
+    line-height: 1.5;
   }
 
   @include media(tablet) {
     &__list {
       grid-template-columns: 1fr;
+    }
+
+    &__item {
+      padding: 16px;
+    }
+
+    &__desc {
+      gap: 16px;
     }
   }
 }

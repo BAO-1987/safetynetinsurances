@@ -5,7 +5,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 38px;
+    gap: 36px;
   }
 
   &__item {
@@ -16,7 +16,7 @@
 
     span {
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 8px;
       font-weight: var(--fw-700);
     }
   }
@@ -28,8 +28,7 @@
   }
 
   h3 {
-    margin-bottom: 20px;
-    font-size: 24px;
+    margin-bottom: 16px;
   }
 
   @include media(tablet) {

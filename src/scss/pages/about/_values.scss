@@ -34,8 +34,6 @@
 
   h3 {
     margin-bottom: 36px;
-    font-size: 24px;
-    line-height: 1.5;
   }
 
   @include media(tablet-wide) {
@@ -49,12 +47,10 @@
       flex-direction: column;
     }
 
-    &__decr {
-      max-width: 100%;
-    }
-
+    &__decr,
     &__item {
       padding: 16px;
+      max-width: 100%;
     }
   }
 

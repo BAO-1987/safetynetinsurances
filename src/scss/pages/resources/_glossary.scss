@@ -10,7 +10,12 @@
 
   h3 {
     margin-bottom: 12px;
-    font-size: 24px;
-    line-height: 1.5;
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
   }
 }

@@ -67,15 +67,6 @@
   }
 
   @include media(mobile-l) {
-    &--footer {
-      flex-direction: column;
-      justify-content: center;
-      padding: 30px 0;
-      gap: 24px;
-    }
-  }
-
-  @include media(mobile-l) {
     &__inner {
       position: fixed;
       right: 0;
@@ -108,12 +99,15 @@
       }
     }
 
-    &__link {
-      font-size: 20px;
-    }
-
     &__btns {
       flex-direction: column;
+    }
+
+    &--footer {
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 0;
+      gap: 24px;
     }
   }
 }

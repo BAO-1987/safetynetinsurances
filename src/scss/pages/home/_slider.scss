@@ -16,8 +16,8 @@
   &__item {
     display: flex;
     justify-content: space-between;
-    gap: 36px;
     height: auto;
+    gap: 36px;
   }
 
   &__image {
@@ -33,11 +33,11 @@
 
     position: absolute;
     left: 50%;
-    transform: translate(85%, -8%);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 250px;
+    transform: translate(85%, -8%);
 
     .btn {
       position: relative;
@@ -85,6 +85,10 @@
   @include media(tablet-wide) {
     &__item {
       align-items: center;
+    }
+
+    &__desc {
+      translate: none;
     }
 
     .slogan {

@@ -9,18 +9,12 @@
   }
 
   h1 {
-    margin-bottom: rem(88);
+    margin-bottom: rem(48);
   }
 
   h2 {
     margin-bottom: 24px;
     font-size: clamp(1.5625rem, 1.4583rem + 0.463vi, 1.875rem);
-  }
-
-  p,
-  li {
-    font-size: 16px;
-    opacity: 1;
   }
 
   ul {
@@ -30,13 +24,14 @@
 
   li {
     padding-left: 10px;
+    font-size: clamp(16px, 0.9167rem + 0.3704vi, 20px);
 
     &:not(:last-child) {
       margin-bottom: 3px;
     }
 
     &::marker {
-      content: "-";
+      content: "✓";
     }
   }
 
@@ -48,7 +43,7 @@
 
   a {
     text-decoration: underline;
-    color: var(--color-blue-600);
+    color: var(--color-azure-300);
   }
 
   @include media(tablet) {

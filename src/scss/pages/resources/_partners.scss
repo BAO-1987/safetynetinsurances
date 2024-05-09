@@ -34,4 +34,20 @@
       inset: 0;
     }
   }
+
+  @include media(tablet) {
+    &__list {
+      gap: 24px;
+    }
+
+    img {
+      margin-bottom: 16px;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
 }

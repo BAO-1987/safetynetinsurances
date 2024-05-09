@@ -19,4 +19,8 @@
   &.scroll {
     box-shadow: 0 0 2px 4px rgba(44, 46, 53, 0.12);
   }
+
+  @include media(tablet) {
+    padding: 10px 0;
+  }
 }

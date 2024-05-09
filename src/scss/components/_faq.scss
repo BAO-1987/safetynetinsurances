@@ -2,7 +2,7 @@
 @use "../utils/mixins/" as *;
 
 .faq {
-  padding: 86px 0 55px;
+  padding-bottom: 55px;
 
   &__item {
     position: relative;
@@ -62,14 +62,21 @@
   }
 
   @include media(tablet) {
-    &__item {
-      &:not(:last-child) {
-        margin-bottom: 24px;
-      }
-    }
+    padding-bottom: 25px;
 
-    summary {
-      padding: 16px 0;
+    &__item {
+      margin-bottom: 24px;
+
+      &::before {
+        bottom: -14px;
+      }
+
+      summary {
+        &::after {
+          right: -6px;
+          top: -2px;
+        }
+      }
     }
 
     h2 {

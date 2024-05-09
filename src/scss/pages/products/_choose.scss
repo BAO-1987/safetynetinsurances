@@ -27,17 +27,13 @@
     }
   }
 
-  // &__image {
-
-  // }
-
   &__desc {
     display: grid;
     gap: 24px;
 
     li {
-      padding-left: 10px;
       counter-increment: desc-counter;
+      padding-left: 10px;
       font-size: 20px;
 
       &::before {
@@ -53,7 +49,28 @@
 
   h3 {
     margin-bottom: 24px;
-    font-size: 24px;
-    line-height: 1.5;
+  }
+
+  @include media(tablet) {
+    &__list {
+      gap: 36px;
+    }
+
+    &__item {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &__content {
+      &:not(even) {
+        order: -1;
+      }
+    }
+
+    &__desc {
+      li {
+        padding-left: 0;
+      }
+    }
   }
 }
