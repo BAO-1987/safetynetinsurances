@@ -9,7 +9,7 @@
   width: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0) 99.999%);
   transition-property: transform, background;
-  transition-duration: 0.15s;
+  transition-duration: 0.3s;
   backdrop-filter: blur(6px);
 
   &.hide {
